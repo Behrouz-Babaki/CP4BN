@@ -1,0 +1,26 @@
+Let us analyze the insurance network. This network describes the
+factors that influence the insurance claims made by customers of a
+company. High property claims impose high costs on the company. To
+find patterns related to these claims, search for patterns that
+include the assignment "PropertyCost=Million" and have a probability
+above 0.015. We obtain 12 patterns, most of which contain the
+assignments "SeniorTrain=False" or "Theft=False". We don't find these
+assignments interesting, so we impose a constraint that excludes them
+from patterns. We also lower the threshold to 0.105 to find more
+patterns. This gives us 76 patterns. An example is pattern
+A={"PropertyCost=Million", "DrivingSkill=Substandard",
+"DrivQuality=Poor", "LiabilityCost=Thousand"} which indicates a
+connection between high property cost, the driving capabilities of
+customer, and the liability cost incurred by him. However, we suspect
+that there is a redundancy of information in some of the
+patterns. Imposing a constraint for removing the patterns with
+redundancies removes pattern A and keeps pattern
+B={"PropertyCost=Million", "DrivingSkill=Poor",
+"LiabilityCost=Thousand"}. The reason is that in our network poor
+driving skills determinstically implies poor driving quality. Next we
+retract the last constraint and search for patterns that are more
+specific. Pattern A is discarded in favor of the more specific pattern
+C={"PropertyCost=Million", "DrivingSkill=Substandard",
+"DrivQuality=Poor" "LiabilityCost=Thousand",
+"OtherCarCost=HunderdThousand"} which makes a connection to the case
+of incurring high third-party costs in an accident.

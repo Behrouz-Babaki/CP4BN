@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./bin/likely --closed --threshold=0.9 --acfile ./data/small_nets/nets/asia.net.ac --lmfile ./data/small_nets/nets/asia.net.lmap --verbose

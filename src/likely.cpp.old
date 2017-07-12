@@ -1,0 +1,96 @@
+#include <vector>
+#include <string>
+#include <gecode/float.hh>
+#include <gecode/int.hh>
+#include <gecode/search.hh>
+#include "lim.h"
+#include "cm_options.h"
+#include "lmapReader.h"
+#include "acReader.h"
+#include "attrSetWriter.h"
+
+#ifdef USE_GIST
+#include <gecode/gist.hh>
+#endif //USE_GIST
+
+using namespace Gecode;
+using std::cerr;
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
+
+extern struct Cm_opt PROG_OPT;
+
+void printStats(int, const Gecode::Search::Statistics&);
+
+int main (int argc, char** argv) {
+
+  getCmOptions(argc, argv);
+
+  try {
+
+    double threshold = PROG_OPT.threshold;
+    
+    LmapReader MapReader (PROG_OPT.lm_file);
+    
+    if (PROG_OPT.names_file != NULL) {
+      string namesFile(PROG_OPT.names_file);
+      MapReader.writeVarValFile(namesFile);
+    }
+
+    vector<size_t> varValNums;
+    MapReader.getNVarVals(varValNums);
+
+    //TODO There should be a better method for copying
+    SetWriter* BinaryWriter = NULL;
+    bool output_binary = false;
+    if (PROG_OPT.binary_file != NULL) {
+      output_binary = true;
+      BinaryWriter = new SetWriter (varValNums, threshold, PROG_OPT.binary_file);
+    }
+
+    AcReader NetReader(PROG_OPT.ac_file, MapReader);
+    Lim* s = new Lim(NetReader, threshold);
+
+
+#ifdef USE_GIST
+    Gist::Print<Lim> p("Print solution");
+    Gist::Options o;
+    o.inspect.click(&p);
+    Gist::dfs(s, o);
+#else
+    vector<size_t> attrValues;
+    double minProb, maxProb;
+    int nrSols=0;
+    DFS<Lim>* d = new DFS<Lim>(s);
+    while (Lim* current_solution = d->next()){
+      if (PROG_OPT.verbose)
+	current_solution->print(cout);
+      current_solution->getSetnProb(attrValues, minProb, maxProb);
+      if (output_binary)
+	BinaryWriter->write(attrValues, minProb, maxProb);
+      delete current_solution;
+      nrSols++;
+    }
+    delete s;
+    delete BinaryWriter;
+    if (!PROG_OPT.silent)
+      printStats(nrSols, d->statistics());
+
+    return 0;
+#endif
+  } catch (Exception e) {
+    cerr << "Something went wrong ...\n" << e.what() << endl;
+    return 1;
+  } // try
+}
+
+void printStats(int nrSols, const Gecode::Search::Statistics &stats){
+  cout <<"Search statistics:"<<std::endl;
+  cout <<"PROPS "<<stats.propagate<<std::endl;
+  cout <<"SOLS  "<<nrSols<<std::endl;
+  cout <<"FAIL  "<<stats.fail<<std::endl;
+  cout <<"NODE  "<<stats.node<<std::endl;
+  cout <<"DEPTH "<<stats.depth<<std::endl;
+}

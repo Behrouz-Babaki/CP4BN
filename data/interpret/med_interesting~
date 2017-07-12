@@ -1,0 +1,22 @@
+threshold: 0.25
+
+431215433314454424443242441 -- [0.540033..0.540033] -- [0.285..0.285]
+431215433324054424443242441 -- [0.53867..0.53867] -- [0.28503..0.28503]
+431215433324454424443242441 -- [0.557741..0.557741] -- [0.297976..0.297976]
+
+0.255
+Airbag = False
+Antilock = False
+GoodStudent = False
+VehicleYear = Older
+
+0.2536
+Airbag = False
+Antilock = False
+ILiCost = Thousand
+VehicleYear = Older
+
+0.2597
+Airbag = False
+Antilock = False
+VehicleYear = Older

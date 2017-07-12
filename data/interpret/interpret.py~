@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import sys
+if len(sys.argv) < 2:
+    print('Usage: {} [names file] [numbers]'.format(sys.argv[0]))
+    exit(1)
+
+with open(sys.argv[1], 'r') as f:
+    num_vars = int(f.readline().strip())
+    varnames = [''] * num_vars
+    varvals = [[]] * num_vars
+    for i in range(num_vars):
+        varnames[i] = f.readline().strip()
+        numvals = int(f.readline().strip())
+        vals = [''] * numvals
+        for j in range(numvals):
+            vals[j] = f.readline().strip()
+        varvals[i] = vals
+
+nums = [int(i) for i in list(sys.argv[2])]
+for i in range(num_vars):
+    if nums[i] < len(varvals[i]):
+        print ('{} = {}'.format(varnames[i], varvals[i][nums[i]]))

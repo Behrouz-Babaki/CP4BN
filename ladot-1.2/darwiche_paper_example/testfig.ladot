@@ -1,0 +1,83 @@
+digraph mydot {
+	
+	c1[label=$c1:\theta_{b|a}$];
+	b[label=$\lambda_b$];
+	c2[label=$c2:\theta_{b|\bar{a}}$];
+
+	c3[label=$c3:\theta_{\bar{b}|a}$];
+	b_[label=$\lambda_{\bar{b}}$];
+	c4[label=$c4:\theta_{\bar{b}|\bar{a}}$];
+	
+	c5[label=$c5:\theta_{c|a}$];
+	c[label=$\lambda_c$];
+	c6[label=$c6:\theta_{c|\bar{a}}$];
+
+	c7[label=$c7:\theta_{\bar{c}|a}$];
+	c_[label=$\lambda_{\bar{c}}$];
+	c8[label=$c8:\theta_{\bar{c}|\bar{a}}$];
+
+	x1[label=$x_1:*$];
+	x2[label=$x_2:*$];
+	x3[label=$x_3:*$];
+	x4[label=$x_4:*$];
+	x5[label=$x_5:*$];
+	x6[label=$x_6:*$];
+	x7[label=$x_7:*$];
+	x8[label=$x_8:*$];
+	
+	x9[label=$x_9:+$];
+	x10[label=$x_{10}:+$];
+	x11[label=$x_{11}:+$];
+	x12[label=$x_{12}:+$];
+
+	a[label=$\lambda_a$];
+	c9[label=$\lambda_a$];
+
+	a_[label=$\lambda_{\bar{a}}$];
+	c10[label=$\lambda_{\bar{a}}$]
+
+	x13[label=$x_{13}:*$];
+	x14[label=$x_{14}:*$];
+	x15[label=$x_{15}:*$];
+
+	x15 -> x13;
+	x15 -> x14;
+	
+	x13 -> a;
+	x13 -> c9;
+	x13 -> x9;
+	x13 -> x11;
+	
+	x14 -> x10;
+	x14 -> x12;
+	x14 -> c10;
+	x14 -> a_;
+
+	x9 -> x1;
+	x9 -> x3;	
+	x10 -> x2;
+	x10 -> x4;
+	
+	x11 -> x5;
+	x11 -> x7;
+	x12 -> x6;
+	x12 -> x8;
+
+	x1 -> c1;
+	x1 -> b;
+	x2 -> b;
+	x2 -> c2;
+	x3 -> c3;
+	x3 -> b_;
+	x4 -> b_;
+	x4 -> c4;
+	x5 -> c5;
+	x5 -> c;
+	x6 -> c;
+	x6 -> c6;
+	x7 -> c7;
+	x7 -> c_;
+	x8 -> c_;
+	x8 -> c8;
+	
+    }

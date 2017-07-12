@@ -1,0 +1,307 @@
+#include <vector>
+#include <iomanip>
+#include <gecode/float.hh>
+#include <gecode/int.hh>
+#include <gecode/search.hh>
+#include <cstdlib>
+#include "lim.h.improved"
+#include "acReader.h"
+#include "nary_mult.h"
+
+
+#ifdef USE_GIST
+#include <gecode/gist.hh>
+#endif //USE_GIST
+
+using std::vector;
+using std::cout;
+using std::cerr;
+using std::endl;
+using std::ostream;
+using std::setprecision;
+
+using namespace Gecode;
+
+Lim::Lim(const AcReader& NetReader, double threshold) :
+  _threshold(threshold)
+{
+  _numItems = NetReader.getNVars();
+  Items = BoolVarArray (*this, _numItems, 0, 1);
+  // is set after building tree: prob = FloatVar (*this, 0, 1.01);
+
+  this->addConstraints(NetReader);
+  this->branching();
+}
+
+/**
+ * I can't emphasize enough on the importance of this function.  I
+ * wasted another hour just because I had forgotten to add some
+ * variables.
+ */
+Lim::Lim(bool share, Lim& s) : Space(share, s) {
+  // Whatever it is, it should be very important. 
+  // I failed to update floats at first, and that costed me an hour of debugging
+  Items.update(*this, share, s.Items);
+  prob.update(*this, share, s.prob);
+
+}
+
+Space* Lim::copy(bool share) {
+  return new Lim(share, *this);
+}
+
+void Lim::branching() {
+  
+  branch(*this, Items,
+	 //INT_VAR_SIZE_MAX(),
+	 //INT_VAR_DEGREE_MAX(),
+	 INT_VAR_ACTIVITY_MIN(0.99),
+	 INT_VAL_MAX());
+  /*
+   * Activity: increases each time a var's domain is affected by pruning
+   * (0.99 is 'decay' of activity (Act=d*Act) in case of no pruning)
+   *
+   * Low activity means fewest influence by other variables,
+   * high activity means highly dependent on other vars?
+   * e.g. don't search over highly dependent vars, propagation
+   * can often remove them?
+   * (decay perhaps helps in breaking ties, less important)
+   */
+}
+
+void Lim::print(ostream& os) const {
+  try{
+    for (int counter = 0, n = Items.size(); counter<n; counter++) 
+      os << Items[counter];
+
+    os << "$" << prob;
+    os << endl;
+
+  } catch (Exception e) {
+    cerr << "ERROR \n" << e.what() << endl;
+  }
+}
+
+void Lim::getSetnProb (vector<size_t>& attrValues,
+		       double& minPr, double& maxPr) const {
+  attrValues.clear();
+  for (int counter=0, n = Items.size(); counter < n; counter++)
+    if (Items[counter].val())
+      attrValues.push_back(1);
+    else
+      attrValues.push_back(2);
+  minPr = prob.min();
+  maxPr = prob.max();
+}
+
+void Lim::addConstraints(const AcReader& NetReader) {
+  
+  buildTree(NetReader);
+  
+  // prob (set by buildTree) bigger than threshold:
+  rel (*this, prob, FRT_GQ, _threshold);
+}
+
+void Lim::buildTree(const AcReader& NetReader) {
+
+  int acNNodes = NetReader.getNNodes();
+  FloatVarArray acNodeVars;
+  acNodeVars = FloatVarArray (*this, acNNodes);
+  
+  // creating FloatVars for internal nodes
+  for (int nodeNumber = 0; nodeNumber < acNNodes; nodeNumber++){
+    acNType nodeType = NetReader.getNodeType(nodeNumber);
+    switch (nodeType){
+    case nLiteral:
+      setupLiteralNode (acNodeVars, nodeNumber, NetReader);
+      break;
+    case nAnd:
+      setupAndNode (acNodeVars, nodeNumber, NetReader);
+      break;
+    case nOr:
+      setupOrNode (acNodeVars, nodeNumber, NetReader);
+      break;
+    case nTrue:
+      setupTrueNode (acNodeVars, nodeNumber);
+      break;
+    case nFalse:
+      setupFalseNode (acNodeVars, nodeNumber);
+      break;
+    }
+  }
+
+  int rootNode = NetReader.getRootNode();
+  prob = acNodeVars[rootNode];
+
+}
+
+void Lim::setupLiteralNode (
+			    FloatVarArray& acNodeVars,
+			    int nodeNumber, 
+			    const AcReader& reader) {
+  double weight = reader.getWeightForNode (nodeNumber);
+  if (reader.isNodeVariable(nodeNumber)){
+    int variable = reader.getVarForNode (nodeNumber);
+    int value = reader.getValForNode (nodeNumber);
+    assert(variable < this->_numItems);
+    assert (value == 0 || value == 1);
+    if (value == 1)
+      acNodeVars [nodeNumber] = FloatVar (*this, weight, weight);
+    else if (value == 0) {
+      acNodeVars [nodeNumber] = FloatVar (*this, 0, weight);
+
+      //dom (*this, acNodeVars[nodeNumber], 0, Items[variable]);
+      // equivalent to the above:
+      rel(*this, acNodeVars[nodeNumber], FRT_EQ, 0, Items[variable]);
+
+      // negItems[variable] <=> acNodeVars[nodeNumber] = weight
+      //dom (*this, acNodeVars[nodeNumber], weight, negItems[variable]);
+      // equivalent to the above, though requires some brain twisting:
+      // advantage: no need for negating Items
+      rel(*this, acNodeVars[nodeNumber], FRT_NQ, weight, Items[variable]);
+    }
+  }
+  else 
+    acNodeVars [nodeNumber] = FloatVar (*this, weight, weight);
+}
+
+void Lim::setupAndNode (FloatVarArray& acNodeVars,
+			int nodeNumber, 
+			const AcReader& reader) {
+
+  vector<int> childrenNodeNrs;
+  reader.getChildrenNodes (nodeNumber, childrenNodeNrs);
+  
+  // preprocess, remove assigned ones
+  vector<FloatVar> childrenNodes;
+  FloatVal fixed = 1.0; // already assigned part
+  for (auto child: childrenNodeNrs) {
+    if (acNodeVars[child].assigned()) {
+      fixed *= acNodeVars[child].val();
+    } else {
+      childrenNodes.push_back(acNodeVars[child]);
+    }
+  }
+  
+  //cout << "Fixed is: " << fixed.min() << ".." << fixed.max() <<"\n";
+  
+  if (childrenNodes.size() == 0) {
+    // special case: all assigned
+    acNodeVars[nodeNumber] = FloatVar (*this, fixed.min(), fixed.max()); // Rounding: just use max?
+  } else {
+    // init max domain value
+    FloatNum domainMax = 1;
+    for (auto child : childrenNodes)
+      domainMax *= child.max();
+    domainMax *= fixed.max();
+    
+    if (childrenNodes.size() == 1) {
+        if (fixed == 1.0) {
+          acNodeVars[nodeNumber] = childrenNodes[0];
+        } else {
+          acNodeVars[nodeNumber] = FloatVar (*this, 0, domainMax);
+          FloatVar tmp(*this, fixed.min(), fixed.max());
+          mult (*this, childrenNodes[0], tmp, acNodeVars[nodeNumber]);
+        }
+    } else {
+
+      int childrenCnt = childrenNodes.size();
+      
+      // decompose
+      /*
+      FloatVarArray temp = FloatVarArray (*this, childrenCnt-1);
+      temp[0] = FloatVar(*this, 0, childrenNodes[0].max()*childrenNodes[1].max());
+      //mult(*this, childrenNodes[0], childrenNodes[1], temp[0]);
+      FloatVarArgs expr; expr << childrenNodes[0]; expr << childrenNodes[1];
+      nary_mult(*this, temp[0], expr);
+      
+      for (int counter = 1; counter != childrenCnt-1; counter++) {
+        temp [counter] = FloatVar (*this, 0, temp[counter-1].max()*childrenNodes[counter+1].max());
+        //mult (*this, temp[counter-1], childrenNodes[counter+1], temp[counter]);
+        FloatVarArgs expr; expr << temp[counter-1]; expr << childrenNodes[counter+1];
+        nary_mult(*this, temp[counter], expr);
+      }
+    
+      if (fixed == 1.0) {
+        //cout << "Fixed is 1.0\n";
+        acNodeVars[nodeNumber] = temp[childrenCnt-2];
+      } else {
+        // now mult times fixed
+        acNodeVars[nodeNumber] = FloatVar (*this, 0, domainMax);
+        FloatVar tmp(*this, fixed.min(), fixed.max());
+        
+        //mult (*this, temp[childrenCnt-2], tmp, acNodeVars[nodeNumber]);
+        FloatVarArgs expr; expr << temp[childrenCnt-2]; expr << tmp;
+        nary_mult(*this, acNodeVars[nodeNumber], expr);    
+      }
+      */
+      
+      // nary
+      FloatVarArgs expression (childrenCnt);
+      for (int counter=0; counter < childrenCnt; counter++)
+        expression[counter] = childrenNodes[counter];
+      
+      acNodeVars[nodeNumber] = FloatVar (*this, 0, domainMax);
+      nary_mult(*this, acNodeVars[nodeNumber], expression, fixed);
+    }
+  }
+
+}
+
+void Lim::setupOrNode (FloatVarArray& acNodeVars,
+		       int nodeNumber, 
+		       const AcReader& reader) {
+  
+  vector<int> childrenNodeNrs;
+  reader.getChildrenNodes (nodeNumber, childrenNodeNrs);
+  
+  // preprocess, remove assigned ones
+  vector<FloatVar> childrenNodes;
+  FloatVal fixed = 0.0; // already assigned part
+  for (auto child: childrenNodeNrs) {
+    if (acNodeVars[child].assigned()) {
+      fixed += acNodeVars[child].val();
+    } else {
+      childrenNodes.push_back(acNodeVars[child]);
+    }
+  }
+  
+  //cout << "Fixed is: " << fixed.min() << ".." << fixed.max() <<"\n";
+  
+  if (childrenNodes.size() == 0) {
+    // special case: all assigned
+    acNodeVars[nodeNumber] = FloatVar (*this, fixed.min(), fixed.max()); // Rounding: just use max?
+  } else {
+    // init max domain value
+    FloatNum domainMax = 1;
+    for (auto child : childrenNodes)
+      domainMax += child.max();
+    domainMax += fixed.max();
+    
+    if (childrenNodes.size() == 1 && fixed == 0.0) {
+      acNodeVars[nodeNumber] = childrenNodes[0];
+    } else {
+        int childrenCnt = childrenNodes.size();
+        
+        FloatVarArgs expression (childrenCnt);
+        for (int counter=0; counter < childrenCnt; counter++)
+          expression[counter] = childrenNodes[counter];
+        
+        if (fixed != 0.0)
+          expression << FloatVar (*this, fixed.min(), fixed.max());
+        
+        acNodeVars[nodeNumber] = FloatVar (*this, 0, domainMax);
+        linear (*this, expression, FRT_EQ, acNodeVars[nodeNumber]);
+    }
+  }
+}
+
+void Lim::setupTrueNode (FloatVarArray& acNodeVars,
+			 int nodeNumber) {
+  acNodeVars[nodeNumber] = FloatVar (*this, 1, 1);
+}
+
+void Lim::setupFalseNode (FloatVarArray& acNodeVars,
+			  int nodeNumber) {
+  acNodeVars[nodeNumber] = FloatVar (*this, 0, 0);
+}

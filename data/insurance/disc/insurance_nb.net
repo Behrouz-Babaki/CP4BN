@@ -1,0 +1,212 @@
+net
+{
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@36501c9b";
+	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@45861ff8";
+	node_size = (130.0 55.0);
+}
+
+node DrivHist
+{
+	states = ("Zero" "One" "Many" );
+	position = (346 -113);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node Antilock
+{
+	states = ("True" "False" );
+	position = (1043 -369);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node Age
+{
+	states = ("Adolescent" "Adult" "Senior" );
+	position = (998 -526);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node OtherCar
+{
+	states = ("True" "False" );
+	position = (261 -526);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node VehicleYear
+{
+	states = ("Current" "Older" );
+	position = (558 -54);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node PropCost
+{
+	states = ("Thousand" "TenThou" "HundredThou" "Million" );
+	position = (601 -352);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node DrivQuality
+{
+	states = ("Poor" "Normal" "Excellent" );
+	position = (408 -640);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node HomeBase
+{
+	states = ("Secure" "City" "Suburb" "Rural" );
+	position = (832 -96);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node SeniorTrain
+{
+	states = ("True" "False" );
+	position = (609 -677);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node Mileage
+{
+	states = ("FiveThou" "TwentyThou" "FiftyThou" "Domino" );
+	position = (1036 -196);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node GoodStudent
+{
+	states = ("True" "False" );
+	position = (854 -649);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node Airbag
+{
+	states = ("True" "False" );
+	position = (225 -253);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+node MakeModel
+{
+	states = ("SportsCar" "Economy" "FamilySedan" "Luxury" "SuperLuxury" );
+	position = (178 -395);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	diagnosistype = "AUXILIARY";
+}
+potential ( DrivHist | PropCost )
+{
+	data = ((	0.4727498333333333	0.1485	0.37875016666666667	)
+		(	0.4727498333333333	0.1485	0.37875016666666667	)
+		(	0.4727498333333333	0.1485	0.37875016666666667	)
+		(	0.4727498333333333	0.1485	0.37875016666666667	));
+}
+potential ( Antilock | PropCost )
+{
+	data = ((	0.38309999999999994	0.6169	)
+		(	0.38309999999999994	0.6169	)
+		(	0.38309999999999994	0.6169	)
+		(	0.38309999999999994	0.6169	));
+}
+potential ( Age | PropCost )
+{
+	data = ((	0.2	0.6	0.2	)
+		(	0.2	0.6	0.2	)
+		(	0.2	0.6	0.2	)
+		(	0.2	0.6	0.2	));
+}
+potential ( OtherCar | PropCost )
+{
+	data = ((	0.7875000000000001	0.2125	)
+		(	0.7875000000000001	0.2125	)
+		(	0.7875000000000001	0.2125	)
+		(	0.7875000000000001	0.2125	));
+}
+potential ( VehicleYear | PropCost )
+{
+	data = ((	0.5375	0.46249999999999997	)
+		(	0.5375	0.46249999999999997	)
+		(	0.5375	0.46249999999999997	)
+		(	0.5375	0.46249999999999997	));
+}
+potential ( PropCost | )
+{
+	data = (	0.04375	0.175	0.300625	0.480625	);
+}
+potential ( DrivQuality | PropCost )
+{
+	data = ((	0.4258333333333333	0.21750000000000003	0.3566666666666667	)
+		(	0.4258333333333333	0.21750000000000003	0.3566666666666667	)
+		(	0.4258333333333333	0.21750000000000003	0.3566666666666667	)
+		(	0.4258333333333333	0.21750000000000003	0.3566666666666667	));
+}
+potential ( HomeBase | PropCost )
+{
+	data = ((	0.42187474999999997	0.35937543750000006	0.1378405	0.0809093125	)
+		(	0.42187474999999997	0.35937543750000006	0.1378405	0.0809093125	)
+		(	0.42187474999999997	0.35937543750000006	0.1378405	0.0809093125	)
+		(	0.42187474999999997	0.35937543750000006	0.1378405	0.0809093125	));
+}
+potential ( SeniorTrain | PropCost )
+{
+	data = ((	0.10000016666666667	0.8999998333333333	)
+		(	0.10000016666666667	0.8999998333333333	)
+		(	0.10000016666666667	0.8999998333333333	)
+		(	0.10000016666666667	0.8999998333333333	));
+}
+potential ( Mileage | PropCost )
+{
+	data = ((	0.1	0.4	0.4	0.1	)
+		(	0.1	0.4	0.4	0.1	)
+		(	0.1	0.4	0.4	0.1	)
+		(	0.1	0.4	0.4	0.1	));
+}
+potential ( GoodStudent | PropCost )
+{
+	data = ((	0.10000000000000002	0.9	)
+		(	0.10000000000000002	0.9	)
+		(	0.10000000000000002	0.9	)
+		(	0.10000000000000002	0.9	));
+}
+potential ( Airbag | PropCost )
+{
+	data = ((	0.6050000000000001	0.395	)
+		(	0.6050000000000001	0.395	)
+		(	0.6050000000000001	0.395	)
+		(	0.6050000000000001	0.395	));
+}
+potential ( MakeModel | PropCost )
+{
+	data = ((	0.1875	0.24	0.31000000000000005	0.21250000000000002	0.05	)
+		(	0.1875	0.24	0.31000000000000005	0.21250000000000002	0.05	)
+		(	0.1875	0.24	0.31000000000000005	0.21250000000000002	0.05	)
+		(	0.1875	0.24	0.31000000000000005	0.21250000000000002	0.05	));
+}

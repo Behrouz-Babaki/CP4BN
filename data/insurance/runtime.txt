@@ -1,0 +1,64 @@
+threshold: 0.01
+constriant: evidence(PropCost=Million)
+#sols: 371
+time: 34.13
+
+
+threshold: 0.0105
+constriant: evidence(PropCost=Million)
+#sols: 270
+time: 23.38
+
+threshold: 0.015
+constriant: evidence(PropCost=Million)
+#sols: 12
+time: 1.63
+
+threshold: 0.01
+constriant: evidence(PropCost=Million) + exclude(SeniorTrain) + exclude (Theft)
+#sols: 103
+time: 15.11
+
+threshold: 0.0105
+constriant: evidence(PropCost=Million) + exclude(SeniorTrain) + exclude (Theft)
+#sols: 76
+time: 11.77
+
+threshold: 0.015
+constriant: evidence(PropCost=Million) + exclude(SeniorTrain) + exclude (Theft)
+#sols: 4
+time: 1.02
+
+threshold: 0.0105
+constraint: evidence(PropCost=Million) + exclude(SeniorTrain) + exclude (Theft)
+	    + delta_closed(0.00002)
+#sols: 66
+time: 86.22
+
+threshold: 0.0105
+constraint: evidence(PropCost=Million) + exclude(SeniorTrain) + exclude (Theft)
+	    + delta_closed(0.00005)
+#sols: 63
+time: 86.79
+
+threshold: 0.0105
+constraint: evidence(PropCost=Million) + exclude(SeniorTrain) + exclude (Theft)
+	    + delta_closed(0.0005)
+#sols: 37
+time: 104.41
+
+
+"comparing age groups"
+constraint: exclude(SeniorTrain) + exclude(GoodStudent) + difference(G1, G2, 0.08)
+#sols: 192
+time: 58.41
+
+"comparing naive bayes insurance with original one"
+constraint: difference(G1, G2, 0.25)
+#sols: 2
+time: 12.11
+
+"comparing naive bayes insurance with original one"
+maximize difference(G1, G2)
+#sols: 1401 (mostly duplicates)
+time: 49.23

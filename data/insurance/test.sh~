@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# for i in 10 20 50 100 200 500 1000 2000 5000 10000
+# do
+#     echo "case $i"
+#     cmd="../../bin/likely -d  -p ./pair -l ./child.net.lmap -a ./child.net.ac -g ./learned_nets/child_nb.$i.net.lmap -f ./learned_nets/child_nb.$i.net.ac -t $1"
+#     echo $cmd
+#     $cmd
+#     echo 
+# done
+
+cmd="../../bin/likely -d  -p ./pair -l ./child.net.lmap -a ./child.net.ac -g ./learned_nets/child_nb.10000.net.lmap -f ./learned_nets/child_nb.10000.net.ac -t $1 -v --names ./child.names"
+$cmd

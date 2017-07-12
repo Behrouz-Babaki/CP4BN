@@ -1,0 +1,1216 @@
+0.41999999999999993
+RiskAversion = Cautious
+
+0.4197525
+RiskAversion = Cautious
+Theft = False
+
+0.41803349999999995
+ILiCost = Thousand
+RiskAversion = Cautious
+
+0.41778400000000004
+ILiCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.41127549999999996
+OtherCarCost = Thousand
+RiskAversion = Cautious
+
+0.4110335
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.41070599999999996
+ILiCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+
+0.410464
+ILiCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.40996049999999995
+AntiTheft = True
+DrivHist = Zero
+
+0.409748
+AntiTheft = True
+DrivHist = Zero
+Theft = False
+
+0.4095
+AntiTheft = True
+RiskAversion = Cautious
+
+0.40927749999999996
+AntiTheft = True
+RiskAversion = Cautious
+Theft = False
+
+0.4090805
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+
+0.408867
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+Theft = False
+
+0.40813049999999995
+MedCost = Thousand
+RiskAversion = Cautious
+
+0.40790049999999994
+ILiCost = Thousand
+MedCost = Thousand
+RiskAversion = Cautious
+
+0.407889
+MedCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.40765949999999995
+ILiCost = Thousand
+MedCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.4076044999999999
+AntiTheft = True
+ILiCost = Thousand
+RiskAversion = Cautious
+
+0.40754349999999995
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.4075245
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.4073805
+AntiTheft = True
+ILiCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.40732
+ILiCost = Thousand
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.4073015
+ILiCost = Thousand
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.406792
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+
+0.40668
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+
+0.40655299999999994
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.406441
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.40632650000000003
+OtherCarCost = Thousand
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.406308
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.406239
+ILiCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.4062205
+ILiCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.406018
+AntiTheft = True
+DrivHist = Zero
+OtherCarCost = Thousand
+
+0.405807
+AntiTheft = True
+DrivHist = Zero
+OtherCarCost = Thousand
+Theft = False
+
+0.4057314999999999
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+OtherCarCost = Thousand
+
+0.40561099999999994
+MedCost = Thousand
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.40559249999999997
+MedCost = Thousand
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.40553149999999993
+ILiCost = Thousand
+MedCost = Thousand
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.40552049999999995
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+
+0.40551249999999994
+ILiCost = Thousand
+MedCost = Thousand
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.40504799999999996
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.4050295
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.4050105
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+ThisCarCost = Thousand
+
+0.4049915
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+ThisCarCost = Thousand
+
+0.40457199999999993
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+
+0.4044245
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+
+0.40436250000000007
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+Theft = False
+
+0.40422
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+
+0.40390700000000007
+AntiTheft = True
+DrivHist = Zero
+ThisCarCost = Thousand
+
+0.4038895
+AntiTheft = True
+DrivHist = Zero
+Theft = False
+ThisCarCost = Thousand
+
+0.4038115
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+
+0.4037934999999999
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+ThisCarCost = Thousand
+
+0.4037764999999999
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4037664999999999
+AntiTheft = True
+OtherCarCost = Thousand
+
+0.4037409999999999
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+OtherCarCost = Thousand
+
+0.40366849999999993
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+
+0.4035995
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+
+0.40356050000000004
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+
+0.4035344999999999
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+
+0.40345699999999995
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+
+0.40341000000000005
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.4033995
+AntiTheft = True
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.4033945
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.40338399999999996
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.40325349999999993
+AntiTheft = True
+DrivHist = Zero
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.4032365
+AntiTheft = True
+DrivHist = Zero
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.40320399999999995
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.4031869999999999
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.40287449999999997
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+ThisCarCost = Thousand
+
+0.4028574999999999
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4028225
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+ThisCarCost = Thousand
+
+0.4028049999999999
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.40276249999999997
+AntiTheft = True
+ILiCost = Thousand
+ThisCarCost = Thousand
+
+0.40274200000000004
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.40262149999999997
+AntiTheft = True
+ThisCarCost = Thousand
+
+0.40260599999999996
+AntiTheft = True
+Theft = False
+ThisCarCost = Thousand
+
+0.402522
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.4025045
+AntiTheft = True
+DrivHist = Zero
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.402496
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.40247900000000003
+AntiTheft = True
+DrivHist = Zero
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4020005
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.401985
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.401946
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.40192549999999994
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+
+0.4019065
+Accident = None
+AntiTheft = True
+ThisCarDam = None
+
+0.4019065
+Accident = None
+AntiTheft = True
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+ThisCarCost = Thousand
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+ThisCarCost = Thousand
+
+0.401721
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.401721
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+ThisCarCost = Thousand
+
+0.401721
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+
+0.401721
+Accident = None
+AntiTheft = True
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401721
+Accident = None
+AntiTheft = True
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+MedCost = Thousand
+Theft = False
+
+0.4016995
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+
+0.4016995
+Accident = None
+AntiTheft = True
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+Theft = False
+ThisCarCost = Thousand
+
+0.4016995
+Accident = None
+AntiTheft = True
+Theft = False
+ThisCarDam = None
+
+0.4016995
+Accident = None
+AntiTheft = True
+Theft = False
+
+0.4016635
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.4016605
+AntiTheft = True
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.4015645
+AntiTheft = True
+ILiCost = Thousand
+ThisCarDam = None
+
+0.40156100000000006
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.401559
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarDam = None
+
+0.401545
+AntiTheft = True
+ThisCarDam = None
+
+0.401475
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.40147200000000005
+AntiTheft = True
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401456
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401456
+AntiTheft = True
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.40145449999999994
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.40145449999999994
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4014339999999999
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+ThisCarDam = None
+
+0.40140449999999994
+AntiTheft = True
+MedCost = Thousand
+ThisCarDam = None
+
+0.4013764999999999
+AntiTheft = True
+ILiCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4013705
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4013675
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4013604999999999
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4013604999999999
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4013565
+AntiTheft = True
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.40135450000000006
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.40135450000000006
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.401352
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401352
+AntiTheft = True
+MedCost = Thousand
+OtherCarCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4013405
+AntiTheft = True
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.4013405
+AntiTheft = True
+Theft = False
+ThisCarDam = None
+
+0.4012454999999999
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401225
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.401225
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.4012165
+AntiTheft = True
+MedCost = Thousand
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.40120049999999996
+AntiTheft = True
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+ThisCarDam = None
+
+0.40120049999999996
+AntiTheft = True
+MedCost = Thousand
+Theft = False
+ThisCarDam = None
+
+0.40108299999999997
+AntiTheft = True
+OtherCarCost = Thousand
+RiskAversion = Cautious
+
+0.4009999999999999
+RiskAversion = Adventurous
+
+0.40086599999999994
+AntiTheft = True
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.40080199999999994
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+ThisCarCost = Thousand
+
+0.40078649999999993
+AntiTheft = True
+ILiCost = Thousand
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.4005390000000001
+AntiTheft = True
+ILiCost = Thousand
+
+0.400534
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+
+0.4005255
+AntiTheft = True
+MedCost = Thousand
+ThisCarCost = Thousand
+
+0.40051
+AntiTheft = True
+MedCost = Thousand
+Theft = False
+ThisCarCost = Thousand
+
+0.40033149999999995
+AntiTheft = True
+ILiCost = Thousand
+Theft = False
+
+0.40031700000000003
+AntiTheft = True
+ILiCost = Thousand
+OtherCarCost = Thousand
+RiskAversion = Cautious
+Theft = False
+
+0.40012949999999997
+RiskAversion = Adventurous
+Theft = False
+

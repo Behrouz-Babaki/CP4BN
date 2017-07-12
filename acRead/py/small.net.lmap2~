@@ -1,0 +1,19 @@
+c Following is the literal map:
+c
+cc$N$6
+cc$V$id1$2$true$false
+cc$V$id2$2$true$false
+cc$V$id3$2$true$false
+cc$I$-1$1.0$id1$true$0
+cc$I$1$1.0$id1$false$1
+cc$I$-2$1.0$id2$true$0
+cc$I$2$1.0$id2$false$1
+cc$I$-3$1.0$id3$true$0
+cc$I$3$1.0$id3$false$1
+cc$A$-4$1.0
+cc$A$4$0.5
+cc$A$-5$1.0
+cc$A$5$0.8
+cc$A$-6$1.0
+cc$A$6$0.2
+

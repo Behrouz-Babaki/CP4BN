@@ -1,0 +1,5 @@
+Let us analyze the insurance network. This network describes the
+factors that influence the insurance claims made by customers of a
+company. High property claims impose high costs on the company. To
+find patterns related to these claims, search for patterns that
+include the assignment "PropertyCost=Million".

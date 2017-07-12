@@ -1,0 +1,172 @@
+net
+{
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@4179e322";
+	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@292eeec3";
+	node_size = (130 55);
+}
+
+node LVHreport
+{
+	states = ("yes" "no" );
+	position = (229 -51);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node RUQO2
+{
+	states = ("<5" "5-12" "12+" );
+	position = (381 -109);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node XrayReport
+{
+	states = ("Normal" "Oligaemic" "Plethoric" "Grd_Glass" "Asy/Patchy" );
+	position = (436 -260);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node Disease
+{
+	states = ("PFC" "TGA" "Fallot" "PAIVS" "TAPVD" "Lung" );
+	position = (224 -183);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node Age
+{
+	states = ("0-3_days" "4-10_days" "11-30_days" );
+	position = (340 -320);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node CO2Report
+{
+	states = ("<7.5" ">=7.5" );
+	position = (43 -186);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node BirthAsphyxia
+{
+	states = ("yes" "no" );
+	position = (83 -281);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node LowerBodyO2
+{
+	states = ("<5" "5-12" "12+" );
+	position = (69 -103);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node Sick
+{
+	states = ("yes" "no" );
+	position = (193 -328);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+node GruntingReport
+{
+	states = ("yes" "no" );
+	position = (459 -182);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	diagnosistype = "AUXILIARY";
+}
+potential ( LVHreport | Disease )
+{
+	data = ((	0.47500000000000003	0.525	)
+		(	0.47500000000000003	0.525	)
+		(	0.47500000000000003	0.525	)
+		(	0.47500000000000003	0.525	)
+		(	0.47500000000000003	0.525	)
+		(	0.47500000000000003	0.525	));
+}
+potential ( RUQO2 | Disease )
+{
+	data = ((	0.3	0.4333333333333334	0.26666666666666666	)
+		(	0.3	0.4333333333333334	0.26666666666666666	)
+		(	0.3	0.4333333333333334	0.26666666666666666	)
+		(	0.3	0.4333333333333334	0.26666666666666666	)
+		(	0.3	0.4333333333333334	0.26666666666666666	)
+		(	0.3	0.4333333333333334	0.26666666666666666	));
+}
+potential ( XrayReport | Disease )
+{
+	data = ((	0.23199999999999998	0.184	0.21600000000000003	0.15199999999999997	0.21600000000000003	)
+		(	0.23199999999999998	0.184	0.21600000000000003	0.15199999999999997	0.21600000000000003	)
+		(	0.23199999999999998	0.184	0.21600000000000003	0.15199999999999997	0.21600000000000003	)
+		(	0.23199999999999998	0.184	0.21600000000000003	0.15199999999999997	0.21600000000000003	)
+		(	0.23199999999999998	0.184	0.21600000000000003	0.15199999999999997	0.21600000000000003	)
+		(	0.23199999999999998	0.184	0.21600000000000003	0.15199999999999997	0.21600000000000003	));
+}
+potential ( Disease | )
+{
+	data = (	0.11530612000000001	0.31836734499999997	0.272959185	0.19234694	0.050510205	0.050510205	);
+}
+potential ( Age | Disease )
+{
+	data = ((	0.8999999999999999	0.065	0.035	)
+		(	0.75	0.17500000000000002	0.07500000000000001	)
+		(	0.475	0.2	0.325	)
+		(	0.8	0.15	0.05	)
+		(	0.75	0.17500000000000002	0.07500000000000001	)
+		(	0.8500000000000001	0.11499999999999999	0.035	));
+}
+potential ( CO2Report | Disease )
+{
+	data = ((	0.6333333333333334	0.3666666666666667	)
+		(	0.6333333333333334	0.3666666666666667	)
+		(	0.6333333333333334	0.3666666666666667	)
+		(	0.6333333333333334	0.3666666666666667	)
+		(	0.6333333333333334	0.3666666666666667	)
+		(	0.6333333333333334	0.3666666666666667	));
+}
+potential ( BirthAsphyxia | Disease )
+{
+	data = ((	0.1	0.9	)
+		(	0.1	0.9	)
+		(	0.1	0.9	)
+		(	0.1	0.9	)
+		(	0.1	0.9	)
+		(	0.1	0.9	));
+}
+potential ( LowerBodyO2 | Disease )
+{
+	data = ((	0.4	0.43333333333333335	0.16666666666666666	)
+		(	0.4	0.43333333333333335	0.16666666666666666	)
+		(	0.4	0.43333333333333335	0.16666666666666666	)
+		(	0.4	0.43333333333333335	0.16666666666666666	)
+		(	0.4	0.43333333333333335	0.16666666666666666	)
+		(	0.4	0.43333333333333335	0.16666666666666666	));
+}
+potential ( Sick | Disease )
+{
+	data = ((	0.4333333333333333	0.5666666666666665	)
+		(	0.4333333333333333	0.5666666666666665	)
+		(	0.4333333333333333	0.5666666666666665	)
+		(	0.4333333333333333	0.5666666666666665	)
+		(	0.4333333333333333	0.5666666666666665	)
+		(	0.4333333333333333	0.5666666666666665	));
+}
+potential ( GruntingReport | Disease )
+{
+	data = ((	0.45	0.55	)
+		(	0.45	0.55	)
+		(	0.45	0.55	)
+		(	0.45	0.55	)
+		(	0.45	0.55	)
+		(	0.45	0.55	));
+}

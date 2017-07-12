@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm *.net.*
+rm core

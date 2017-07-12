@@ -1,0 +1,143 @@
+0  Accident
+	0	None
+	1	Mild
+	2	Moderate
+	3	Severe
+
+1  Age
+	0	Adolescent
+	1	Adult
+	2	Senior
+
+2  Airbag
+	0	True
+	1	False
+
+3  AntiTheft
+	0	True
+	1	False
+
+4  Antilock
+	0	True
+	1	False
+
+5  CarValue
+	0	FiveThou
+	1	TenThou
+	2	TwentyThou
+	3	FiftyThou
+	4	Million
+
+6  Cushioning
+	0	Poor
+	1	Fair
+	2	Good
+	3	Excellent
+
+7  DrivHist
+	0	Zero
+	1	One
+	2	Many
+
+8  DrivQuality
+	0	Poor
+	1	Normal
+	2	Excellent
+
+9  DrivingSkill
+	0	SubStandard
+	1	Normal
+	2	Expert
+
+10  GoodStudent
+	0	True
+	1	False
+
+11  HomeBase
+	0	Secure
+	1	City
+	2	Suburb
+	3	Rural
+
+12  ILiCost
+	0	Thousand
+	1	TenThou
+	2	HundredThou
+	3	Million
+
+13  MakeModel
+	0	SportsCar
+	1	Economy
+	2	FamilySedan
+	3	Luxury
+	4	SuperLuxury
+
+14  MedCost
+	0	Thousand
+	1	TenThou
+	2	HundredThou
+	3	Million
+
+15  Mileage
+	0	FiveThou
+	1	TwentyThou
+	2	FiftyThou
+	3	Domino
+
+16  OtherCar
+	0	True
+	1	False
+
+17  OtherCarCost
+	0	Thousand
+	1	TenThou
+	2	HundredThou
+	3	Million
+
+18  PropCost
+	0	Thousand
+	1	TenThou
+	2	HundredThou
+	3	Million
+
+19  RiskAversion
+	0	Psychopath
+	1	Adventurous
+	2	Normal
+	3	Cautious
+
+20  RuggedAuto
+	0	EggShell
+	1	Football
+	2	Tank
+
+21  SeniorTrain
+	0	True
+	1	False
+
+22  SocioEcon
+	0	Prole
+	1	Middle
+	2	UpperMiddle
+	3	Wealthy
+
+23  Theft
+	0	True
+	1	False
+
+24  ThisCarCost
+	0	Thousand
+	1	TenThou
+	2	HundredThou
+	3	Million
+
+25  ThisCarDam
+	0	None
+	1	Mild
+	2	Moderate
+	3	Severe
+
+26  VehicleYear
+	0	Current
+	1	Older
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+Name1=$1
+Name2=$2
+threshold=$3
+
+# compile the AC
+~/joey/opt/arg_ucla/ace/compile -noTabular ${Name}

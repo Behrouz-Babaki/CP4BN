@@ -1,0 +1,8 @@
+Search statistics:
+PROPS 1139000479
+SOLS  24025
+FAIL  900592
+NODE  1849233
+DEPTH 10
+341.83user 0.65system 5:42.62elapsed 99%CPU (0avgtext+0avgdata 12560maxresident)k
+0inputs+16outputs (0major+661241minor)pagefaults 0swaps

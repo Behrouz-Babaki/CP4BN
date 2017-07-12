@@ -1,0 +1,35 @@
+To find patterns related to customers with high property cost, we set
+the evidence to "PropertyCost=Million" and the threshold to 0.015.   
+
+probability(0.015)
+evidence(PropertyCost=Million)
+
+We obtain 12 patterns, most of which contain assignments
+"SeniorTrain=False" or "Theft=Flase". We exclude these variables, as
+we are not interested in them.
+
+exclude(SeniorTrain)
+exclude(Theft)
+
+Lowering the threshold to 0.0105, we obtain 76 solutions, on of which
+is {"PropertyCost=Million", "DrivingSkill=Substandard", "DrivQuality=Poor"
+"LiabilityCost=Thousand"}. This pattern is overspecified, since the
+second assignment implies the third. We can discard overspecified patterns:
+
+free(0)
+
+Then this pattern is discarded and we will have the simpler pattern
+{"PropertyCost=Million", "DrivingSkill=Poor",
+"LiabilityCost=Thousand"} which has the same
+probability. Alternatively, we might want to see what else is almost
+implied by that pattern, using the delta-closed constraint:
+
+delta-closed(0.005)
+
+Then again that pattern is discarded, but this time we will have a
+longer pattern with the extra assignment
+"OtherCarCost=HundredThousand".
+
+
+
+

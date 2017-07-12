@@ -1,0 +1,28 @@
+431215433314454424443142441 -- [0.477248..0.477248] -- [0.248507..0.248507]
+431215433314454424443242441 -- [0.540033..0.540033] -- [0.281381..0.281381]
+431215433324454424443142441 -- [0.494956..0.494956] -- [0.260645..0.260645]
+431215433324454424443242441 -- [0.557741..0.557741] -- [0.295036..0.295036]
+
+0.229
+Airbag = False
+Antilock = False
+GoodStudent = False
+SeniorTrain = False
+VehicleYear = Older
+
+0.2587
+Airbag = False
+Antilock = False
+GoodStudent = False
+VehicleYear = Older
+
+0.234
+Airbag = False
+Antilock = False
+SeniorTrain = False
+VehicleYear = Older
+
+0.26
+Airbag = False
+Antilock = False
+VehicleYear = Older

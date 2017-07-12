@@ -1,0 +1,4 @@
+#!/bin/bash
+
+acfile="/home/behrouz/Documents/KUL/test/gecode/likely_worlds/data/small_nets/nets/asia.net.ac"
+lmfile="/home/behrouz/Documents/KUL/test/gecode/likely_worlds/data/small_nets/nets/asia.net.lmap"

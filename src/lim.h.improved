@@ -1,0 +1,50 @@
+#ifndef LIM_H
+#define LIM_H
+
+#include <vector>
+#include <gecode/float.hh>
+#include <gecode/search.hh>
+#include <gecode/int.hh>
+#include "acReader.h"
+#include "lmapReader.h"
+
+#ifdef USE_GIST
+#include <gecode/gist.hh>
+#endif //USE_GIST
+
+#pragma GCC diagnostic ignored "-Wswitch"
+
+class Lim : public Gecode::Space {
+
+
+
+ public:
+  Lim(const AcReader&, double);
+  Lim(bool, Lim&);
+  virtual Gecode::Space* copy(bool);
+  void branching();
+  void addConstraints(const AcReader&);
+  void print(std::ostream&) const;
+  void getSetnProb(vector<size_t>&, 
+		   double&,
+		   double&) const;
+
+ protected:
+  double _threshold;
+  int _numItems;
+
+  Gecode::BoolVarArray Items;
+  Gecode::FloatVar prob;
+
+  void buildTree(const AcReader&) ;
+  void setupLiteralNode (Gecode::FloatVarArray&, 
+			 int, const AcReader&);
+  void setupAndNode (Gecode::FloatVarArray&, 
+		     int, const AcReader&);
+  void setupOrNode (Gecode::FloatVarArray&, 
+		    int, const AcReader&);
+  void setupTrueNode (Gecode::FloatVarArray&, int);
+  void setupFalseNode (Gecode::FloatVarArray&, int);
+};
+
+#endif //LIM_H

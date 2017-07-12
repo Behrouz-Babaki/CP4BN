@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+acfile="${DIR}/../../data/small_nets/nets/asia.net.ac"
+lmfile="${DIR}/../../data/small_nets/nets/asia.net.lmap"
+bin="${DIR}/../../bin/likely"
+
+cmd="${bin} -c -a ${acfile} -l ${lmfile}  -t 0.9 -v"
+$cmd

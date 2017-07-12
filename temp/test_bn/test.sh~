@@ -1,0 +1,5 @@
+#!/bin/bash
+
+../../bin/likely -d -a ./sprinkler.net.ac -l ./sprinkler.net.lmap -h ./sprinkler.dat -t 0.1
+echo
+../../bin/likely  -a ./sprinkler.net.ac -l ./sprinkler.net.lmap -t 0.1
